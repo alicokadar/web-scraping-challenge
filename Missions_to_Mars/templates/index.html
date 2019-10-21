@@ -20,9 +20,9 @@
     <div class="row container-fluid my-4 mx-1">
       <div class="card col-lg">
         <div class="card-body">
-          <h3 class="card-title font-weight-bold">Latest Mars News</h3>
+          <h3 class="card-title" style="font-weight: bold;">Latest Mars News</h3>
           <hr>
-          <h4 class="card-text font-weight-bold">{{ mars.news_title }}</h4>
+          <h4 class="card-text" style="font-weight: bold;">{{ mars.news_title }}</h4>
           <p class="card-text">{{ mars.news_p }}</p>
         </div>
       </div>
@@ -32,9 +32,11 @@
         <!-- Featured Mars Image card -->
         <div class="card">
           <div class="card-body">
-            <h3 class="card-title">Featured Mars Image</h3>
+            <h3 class="card-title" style="font-weight: bold;">Featured Mars Image</h3>
             <hr>
-            <img class="img-fluid mx-auto d-block" src="{{ mars.featured_image }}" alt="mars">
+            <div style="height: 500px">
+                <img class="img-fluid mx-auto d-block"  style="width: 100%;max-height: 100%" src="{{ mars.featured_image }}" alt="mars">
+            </div>
           </div>
         </div>
       </div>
@@ -43,7 +45,7 @@
           <!-- Current Weather on Mars card -->
           <div class="card col-lg my-2">
             <div class="card-body">
-              <h3 class="card-title">Current Weather On Mars</h3>
+              <h3 class="card-title" style="font-weight: bold;">Current Weather On Mars</h3>
               <hr>
               <p class="card-text">{{ mars.weather }}</p>
             </div>
@@ -51,7 +53,7 @@
           <div class="w-100"></div>
           <div class="card col-lg my-2">
             <div class="card-body">
-              <h3 class="card-title">Mars Facts</h3>
+              <h3 class="card-title" style="font-weight: bold;">Mars Facts</h3>
               <hr>
               {{ mars.facts | safe}}
             </div>
@@ -62,41 +64,64 @@
     <div class="row container-fluid my-4 mx-1">
       <div class="card col-lg">
         <div class="card-body">
-          <h3 class="card-title text-center">Mars Hemispheres</h3>
+          <h3 class="card-title text-center" style="font-weight: bold;">Mars Hemispheres</h3>
           <hr>
           
           <div class="row">
-            <div class="col-md-3">
-              <img class="img-fluid mx-auto d-block" src="{{ mars.hemispheres[0]["url"] }}" alt="{{ mars.hemispheres[0]["title"] }}">
-              <h6 class="text-center font-weight-bold my-3">{{ mars.hemispheres[0]["title"] }}</h6>
-            </div>
-            <div class="col-md-3"></div>
-            <div class="col-md-3">
-              <img class="img-fluid mx-auto d-block" src="{{ mars.hemispheres[1]["url"] }}" alt="{{ mars.hemispheres[1]["title"] }}">
-              <h6 class="text-center font-weight-bold my-3">{{ mars.hemispheres[1]["title"] }}</h6>
-            </div>
-            <div class="col-md-3"></div>
-          </div>
-
-          <div class="row">
-              <div class="col-sm-4">
+              <div class="col-sm-6">
                 <div class="card">
-                  <img class="card-img-top" src="{{ mars.hemispheres[1]["url"] }}" alt="{{ mars.hemispheres[1]["title"] }}">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ mars.hemispheres[1]["title"] }}</h5>
+                  <div class="thumbnail">
+                      <div style="height: 600px">
+                          <img class="card-img-top" style="width: 100%;max-height: 100%" src="{{ mars.hemispheres[0]["url"] }}" alt="{{ mars.hemispheres[0]["title"] }}">
+                          <div class="card-body">
+                            <h5 class="card-title" style="font-weight: bold;">{{ mars.hemispheres[0]["title"] }}</h5>
+                          </div>
+                      </div>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-4"></div>
-              <div class="col-sm-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{ mars.hemispheres[1]["url"] }}" alt="{{ mars.hemispheres[1]["title"] }}">
-                    <div class="card-body">
-                      <h5 class="card-title">{{ mars.hemispheres[1]["title"] }}</h5>
-                  </div>
-                </div>
+              
+              <div class="col-sm-6">
+                  <div class="card">
+                      <div class="thumbnail">
+                          <div style="height: 600px">
+                              <img class="card-img-top" style="width: 100%;max-height: 100%" src="{{ mars.hemispheres[1]["url"] }}" alt="{{ mars.hemispheres[1]["title"] }}">
+                              <div class="card-body">
+                                <h5 class="card-title" style="font-weight: bold;">{{ mars.hemispheres[1]["title"] }}</h5>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
               </div>
           </div> 
+
+          <div class="row">
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="thumbnail">
+                      <div style="height: 600px">
+                          <img class="card-img-top" style="width: 100%;max-height: 100%" src="{{ mars.hemispheres[2]["url"] }}" alt="{{ mars.hemispheres[2]["title"] }}">
+                          <div class="card-body">
+                            <h5 class="card-title" style="font-weight: bold;">{{ mars.hemispheres[2]["title"] }}</h5>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-sm-6">
+                  <div class="card">
+                      <div class="thumbnail">
+                          <div style="height: 600px">
+                              <img class="card-img-top" style="width: 100%;max-height: 100%" src="{{ mars.hemispheres[3]["url"] }}" alt="{{ mars.hemispheres[3]["title"] }}">
+                              <div class="card-body">
+                                <h5 class="card-title" style="font-weight: bold;">{{ mars.hemispheres[3]["title"] }}</h5>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+              </div>
+          </div>  
           
           
           

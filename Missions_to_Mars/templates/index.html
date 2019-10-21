@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container-fluid bg-secondary">
+    <div class="jumbotron text-center" >
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <div class="row container-fluid my-4 mx-1">
+      <div class="card col-lg">
+        <div class="card-body">
+          <h3 class="card-title font-weight-bold">Latest Mars News</h3>
+          <hr>
+          <h4 class="card-text font-weight-bold">{{ mars.news_title }}</h4>
+          <p class="card-text">{{ mars.news_p }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row container-fluid my-4 mx-1">
+      <div class="col-lg-8">
+        <!-- Featured Mars Image card -->
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Featured Mars Image</h3>
+            <hr>
+            <img class="img-fluid mx-auto d-block" src="{{ mars.featured_image }}" alt="mars">
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="row">
+          <!-- Current Weather on Mars card -->
+          <div class="card col-lg my-2">
+            <div class="card-body">
+              <h3 class="card-title">Current Weather On Mars</h3>
+              <hr>
+              <p class="card-text">{{ mars.weather }}</p>
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div class="card col-lg my-2">
+            <div class="card-body">
+              <h3 class="card-title">Mars Facts</h3>
+              <hr>
+              {{ mars.facts | safe}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row container-fluid my-4 mx-1">
+      <div class="card col-lg">
+        <div class="card-body">
+          <h3 class="card-title text-center">Mars Hemispheres</h3>
+          <hr>
+          
+          <div class="row">
+            <div class="col-md-3">
+              <img class="img-fluid mx-auto d-block" src="{{ mars.hemispheres[0]["url"] }}" alt="{{ mars.hemispheres[0]["title"] }}">
+              <h6 class="text-center font-weight-bold my-3">{{ mars.hemispheres[0]["title"] }}</h6>
+            </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3">
+              <img class="img-fluid mx-auto d-block" src="{{ mars.hemispheres[1]["url"] }}" alt="{{ mars.hemispheres[1]["title"] }}">
+              <h6 class="text-center font-weight-bold my-3">{{ mars.hemispheres[1]["title"] }}</h6>
+            </div>
+            <div class="col-md-3"></div>
+          </div>
+
+          <div class="row">
+              <div class="col-sm-4">
+                <div class="card">
+                  <img class="card-img-top" src="{{ mars.hemispheres[1]["url"] }}" alt="{{ mars.hemispheres[1]["title"] }}">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ mars.hemispheres[1]["title"] }}</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4"></div>
+              <div class="col-sm-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{ mars.hemispheres[1]["url"] }}" alt="{{ mars.hemispheres[1]["title"] }}">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ mars.hemispheres[1]["title"] }}</h5>
+                  </div>
+                </div>
+              </div>
+          </div> 
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</html>
